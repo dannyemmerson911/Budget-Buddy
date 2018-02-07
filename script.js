@@ -29,9 +29,15 @@ var userWeeklyBudget;
 		if (itemIsEmpty || priceIsEmpty) {
 			alert("Please fill out the form");
 		}
+		var remaining = userWeeklyBudget-price;
+		$("#budget").text("$"+remaining); 
 
-		console.log(item);
+
+
 	});
+
+		
+
 
 });
 
