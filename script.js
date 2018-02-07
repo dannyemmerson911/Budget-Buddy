@@ -21,7 +21,7 @@ var userWeeklyBudget;
 	$("#formsubmit").click(function(event){
 		event.preventDefault(); 
 		var item = $("#item").val();
-		var price =$("#price").val();
+		var price = $("#price").val();
 
 		var itemIsEmpty = (item === "");
 		var priceIsEmpty = (price === "");
@@ -39,8 +39,8 @@ var userWeeklyBudget;
 //2. Find budget input value ================ DONE
 //3. Append budget value to "total budget" ================ DONE
 //4. Make sure all inputs have values on submit ================ DONE
-//    - Alert user that inputs must be filled
-//5. Find input values for "amount spent" and "item" on click
+//    - Alert user that inputs must be filled ================ DONE
+//5. Find input values for "amount spent" and "item" on click 
 //6. Subtract "amount spent" from "total budget"
 //7. Add "amount spent" to "total spent"
 //8. Add amount spent to appropriate category, based on what category was selected in dropdown
