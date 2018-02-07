@@ -17,6 +17,21 @@ var userWeeklyBudget;
 		$("#wrapperdiv").show();
 	});
 
+	$("#formsubmit").click(function(event){
+		event.preventDefault(); 
+		var item = $("#item").val();
+		var price =$("#price").val();
+
+		var itemIsEmpty = (item === "");
+		var priceIsEmpty = (price === "");
+
+		if (itemIsEmpty || priceIsEmpty) {
+			alert("Please fill out the form");
+		}
+
+		console.log(item);
+	});
+
 });
 
 //1. Fade out welcome page on click -------------
