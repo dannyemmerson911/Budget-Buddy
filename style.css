@@ -1,0 +1,32 @@
+
+
+#lessThanHundred {
+	width: 60%;
+	height: 60%;
+	border: solid black 3px;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+
+#noMoney{
+	width: 60%;
+	height: 60%;
+	border: solid black 3px;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+
+.exclamation {
+	width: 30%;
+	height: 30%;
+	text-align: center;
+}
+
+span {
+	float: right;
+
+}
