@@ -1,5 +1,4 @@
 
-
 #lessThanHundred {
 	width: 60%;
 	height: 60%;
@@ -27,6 +26,22 @@
 }
 
 span {
-	float: right;
+	float: right
+}
+
+#userBudgetInput {
+	border: 2px solid black;
+}
+
+#budgetInputDiv {
+	text-align: center;
+}
+
+#header {
+	text-align: center;
+}
+
+#budgetSubmitButton {
+	background-color: green;
 
 }
