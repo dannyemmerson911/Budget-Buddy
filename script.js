@@ -2,17 +2,26 @@ $(document).ready(function() {
 
 var userWeeklyBudget;
 
+	$("#wrapperdiv").hide();
+
+	$("#lessThanHundred").hide();
+
+	$("#noMoney").hide();
+
 	$("#budgetSubmitButton").click(function(){
 		userWeeklyBudget = $("#userBudgetInput").val();
 		console.log(userWeeklyBudget);
 		$("#userBudgetInput").val("");
+		$("#budget").append(userWeeklyBudget);
+		$("#budgetInputDiv").hide();
+		$("#wrapperdiv").show();
 	});
 
 });
 
-//1. Fade out welcome page on click
-//2. Find budget input value
-//3. Append budget value to "total budget"
+//1. Fade out welcome page on click -------------
+//2. Find budget input value --------------------
+//3. Append budget value to "total budget" ---------------------
 //4. Make sure all inputs have values on submit
 //    - Alert user that inputs must be filled
 //5. Find input values for "amount spent" and "item" on click
