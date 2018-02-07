@@ -8,7 +8,8 @@ var userWeeklyBudget;
 
 	$("#noMoney").hide();
 
-	$("#budgetSubmitButton").click(function(){
+	$("#budgetSubmitButton").click(function(event){
+		event.preventDefault();
 		userWeeklyBudget = $("#userBudgetInput").val();
 		console.log(userWeeklyBudget);
 		$("#userBudgetInput").val("");
@@ -19,10 +20,10 @@ var userWeeklyBudget;
 
 });
 
-//1. Fade out welcome page on click -------------
-//2. Find budget input value --------------------
-//3. Append budget value to "total budget" ---------------------
-//4. Make sure all inputs have values on submit
+//1. Fade out welcome page on click ================ DONE
+//2. Find budget input value ================ DONE
+//3. Append budget value to "total budget" ================ DONE
+//4. Make sure all inputs have values on submit ================ DONE
 //    - Alert user that inputs must be filled
 //5. Find input values for "amount spent" and "item" on click
 //6. Subtract "amount spent" from "total budget"
