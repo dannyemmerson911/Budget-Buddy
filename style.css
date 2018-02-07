@@ -1,0 +1,15 @@
+#userBudgetInput {
+	border: 2px solid black;
+}
+
+#budgetInputDiv {
+	text-align: center;
+}
+
+#header {
+	text-align: center;
+}
+
+#budgetSubmitButton {
+	background-color: green;
+}
