@@ -7,13 +7,6 @@
   <title>Midterm</title>
 </head>
 
-<body>
-		<h1 id="header">Budget Buddy</h1>
-		<div id="budgetInputDiv">
-			<p>Please enter your weekly budget:</p>
-			<span>$ </span><input id="userBudgetInput" type="number">
-			<button id="budgetSubmitButton" type="submit">SUBMIT</button>
-		</div>
 
   <div id="wrapperdiv">
 
@@ -51,6 +44,23 @@
       <h2 id="moneyleft"></h2>
     </div>
 
+  </div>
+
+
+  <div id="lessThanHundred">
+    <span class="close"> X </span>
+    <p>
+      You have under $100 dollars remaining in your weekly budget. Hedge accordingly!
+    </p>
+    <img class="exclamation" src="images/attention.png"/>
+  </div>
+
+  <div id="noMoney">
+    <span class="close"> X </span>
+    <p>
+      Your weekly budget has been exhausted.
+    </p>
+    <img class="exclamation" src="images/attention.png"/>
   </div>
 
 

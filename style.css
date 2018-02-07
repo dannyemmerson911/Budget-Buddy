@@ -1,19 +1,7 @@
 
-#userBudgetInput {
-	border: 2px solid black;
-}
 
-#budgetInputDiv {
-	text-align: center;
-}
 
-#header {
-	text-align: center;
-}
 
-#budgetSubmitButton {
-	background-color: green;
-}
 
 #wrapperdiv {
   display: flex;
@@ -44,3 +32,48 @@ input, select {
   text-align: center;
   justify-content: center;
 }
+
+#lessThanHundred {
+	width: 60%;
+	height: 60%;
+	border: solid black 3px;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+#noMoney{
+	width: 60%;
+	height: 60%;
+	border: solid black 3px;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+
+.exclamation {
+	width: 30%;
+	height: 30%;
+	text-align: center;
+}
+
+span {
+	float: right
+}
+
+#userBudgetInput {
+	border: 2px solid black;
+}
+
+#budgetInputDiv {
+	text-align: center;
+}
+
+#header {
+	text-align: center;
+}
+
+#budgetSubmitButton {
+	background-color: green;
