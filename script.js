@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var userWeeklyBudget;
-	var spentTotal=0;
+	var spentInitial="";
 
 //on page load, hides popup warning divs and the div containing the main expense tracker
   $("#wrapperdiv").hide();
@@ -42,9 +42,14 @@ $(document).ready(function() {
     var remaining = userWeeklyBudget - price;
     $("#budget").text("$" + remaining);
 
-// Below here is what I added 
+// Below here is what I added
 //
-		$("#moneyspent").text("$" + price);
+
+    spentTotal = spentInitial += price;
+    $("#moneyspent").text(spentTotal);
+
+
+
 
 		userWeeklyBudget = remaining;
 		$("#item").val("");
