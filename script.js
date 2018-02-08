@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 //on page load, hides popup warning divs and the div containing the main expense tracker
 	$("#wrapperdiv").hide();
-  	$("#lessThanHundred").hide();
-  	$("#noMoney").hide();
+  $("#lessThanHundred").hide();
+  $("#noMoney").hide();
 
 
 //on submit button click:
@@ -75,26 +75,17 @@ $(document).ready(function() {
   	//var foodTotal = Number(foodTotal) + price;
   	
      //$("#foodEl").text("$" + foodTotal);
-
- if (selected === "Entertainment") {
- 	
+   } else if (selected === "Entertainment") {
   		//var entertainmentUpdate = Number(entertainmentTotal) + price;
   		entertainmentTotal += Number($(".priceInput").val());
   		console.log(entertainmentTotal);
      	$("#entertainmentEl").text("$" + entertainmentTotal);
-    };
-
- if (selected === "Clothing") {
- 	
+    } else if (selected === "Clothing") {
   		//var entertainmentUpdate = Number(entertainmentTotal) + price;
   		clothingTotal += Number($(".priceInput").val());
   		console.log(clothingTotal);
      	$("#clothingEl").text("$" + clothingTotal);
-    };
-
-
- if (selected === "Bills") {
- 	
+    } else if (selected === "Bills") {
   		//var entertainmentUpdate = Number(entertainmentTotal) + price;
   		billsTotal += Number($(".priceInput").val());
   		console.log(clothingTotal);
@@ -106,6 +97,8 @@ $(document).ready(function() {
 
   $("#item").val("");
   $("#price").val("");
+
+
   });
 
 });
