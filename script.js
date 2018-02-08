@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  var userWeeklyBudget;
-  var price;
-  var initialSpent = 0;
-
+	var userWeeklyBudget;
+	var price;
+	var initialSpent = 0;
+  var entertainmentTotal = 0;
 
   //on page load, hides popup warning divs and the div containing the main expense tracker
   $("#wrapperdiv").hide();
@@ -46,19 +46,35 @@ $(document).ready(function() {
     var remaining = userWeeklyBudget - price;
     $("#budget").text("$" + remaining);
     initialSpent = price += Number(initialSpent);
-    console.log(initialSpent);
+    // console.log(initialSpent);
     moneySpentEl.text("$" + initialSpent);
 
+// Below here is what I added
+//
+		// $("#moneyspent").text("$" + price);
 
-
+		// userWeeklyBudget = remaining;
+		// $("#item").val("");
+		// $("#price").val("");
+  // });
 
     userWeeklyBudget = remaining;
     moneySpentEl = initialSpent;
 
+	$("#item").val("");
+	$("#price").val("");
 
-    $("#item").val("");
-    $("#price").val("");
+  if ($("#categoryChoice") === "#entertainment") {
+    Number(entertainmentTotal) += price;
+    console.log(entertainmentTotal);
+    $("#entertainmentEl").text(entertainmentTotal);
+  }
+
+
+
   });
+
+
 
 
 
@@ -70,9 +86,9 @@ $(document).ready(function() {
 //3. Append budget value to "total budget" ================ DONE
 //4. Make sure all inputs have values on submit ================ DONE
 //    - Alert user that inputs must be filled ================ DONE
-//5. Find input values for "amount spent" and "item" on click
-//6. Subtract "amount spent" from "total budget"
-//7. Add "amount spent" to "total spent"
+//5. Find input values for "amount spent" and "item" on click ===========DONE
+//6. Subtract "amount spent" from "total budget" ==============DONE
+//7. Add "amount spent" to "total spent" ===========DONE
 //8. Add amount spent to appropriate category, based on what category was selected in dropdown
 //9. Append "item" and "individual expense" to hidden div based on category
 //10. Once "total budget" is less than $100, fade in first pop up alert
