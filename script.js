@@ -1,25 +1,23 @@
-$(document).ready(function (){
+$(document).ready(function() {
 
-	var userWeeklyBudget;
+  var userWeeklyBudget;
 
-	var initialSpent = 0;
+  var initialSpent = 0;
   var entertainmentTotal = 0;
-	var foodTotal = 0;
-	var clothingTotal = 0;
+  var foodTotal = 0;
+  var clothingTotal = 0;
   var billsTotal = 0;
 
-//on page load, hides popup warning divs and the div containing the main expense tracker
-	$("#wrapperdiv").hide();
-  	$("#lessThanHundred").hide();
-  	$("#noMoney").hide();
-
-
-//on submit button click:
-// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
-// - clears the input field
-// - appends the user's weekly bugdet input value to the expense tracker div
-// - hides the main div
-// - shows the expense tracker div
+  //on page load, hides popup warning divs and the div containing the main expense tracker
+  $("#wrapperdiv").hide();
+  $("#lessThanHundred").hide();
+  $("#noMoney").hide();
+  //on submit button click:
+  // - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
+  // - clears the input field
+  // - appends the user's weekly bugdet input value to the expense tracker div
+  // - hides the main div
+  // - shows the expense tracker div
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
@@ -35,9 +33,9 @@ $(document).ready(function (){
   // - displays the updated userWeeklyBudget total in the h2 element with the id of "budget"
   $("#formsubmit").click(function(event) {
     event.preventDefault();
-        var item = $("#item").val();
-        var price = Number($("#price").val());
-        var moneySpentEl = $("#moneyspent");
+    var item = $("#item").val();
+    var price = Number($("#price").val());
+    var moneySpentEl = $("#moneyspent");
     var itemIsEmpty = (item === "");
     var priceIsEmpty = (price === "");
     if (itemIsEmpty || priceIsEmpty) {
@@ -48,65 +46,29 @@ $(document).ready(function (){
     initialSpent = price + Number(initialSpent);
     // console.log(initialSpent);
     moneySpentEl.text("$" + initialSpent);
-// Below here is what I added
-//
-        // $("#moneyspent").text("$" + price);
-        // userWeeklyBudget = remaining;
-        // $("#item").val("");
-        // $("#price").val("");
-  // });
 
+    userWeeklyBudget = remaining;
+    moneySpentEl = initialSpent;
 
+    var selected = $('#categoryChoice :selected').text();
 
-	userWeeklyBudget = remaining;
-	moneySpentEl = initialSpent;
-
-  var selected = $('#categoryChoice :selected').text();
-
-
-  if (selected === "Food") {
-
-  	console.log(selected);
-  	//price = 0;
-  	//console.log(price);
-  		foodTotal += Number($(".priceInput").val());
-  		console.log(foodTotal);
-     	$("#foodEl").text("$" + foodTotal);
-  	//var foodTotal = Number(foodTotal) + price;
-
-     //$("#foodEl").text("$" + foodTotal);
-
- if (selected === "Entertainment") {
-
-  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
-  		entertainmentTotal += Number($(".priceInput").val());
-  		console.log(entertainmentTotal);
-     	$("#entertainmentEl").text("$" + entertainmentTotal);
+    if (selected === "Food") {
+      foodTotal += Number($(".priceInput").val());
+      $("#foodEl").text("$" + foodTotal);
+    } else if (selected === "Entertainment") {
+      entertainmentTotal += Number($(".priceInput").val());
+      $("#entertainmentEl").text("$" + entertainmentTotal);
+    } else if (selected === "Clothing") {
+      clothingTotal += Number($(".priceInput").val());
+      $("#clothingEl").text("$" + clothingTotal);
+    } else if (selected === "Bills") {
+      billsTotal += Number($(".priceInput").val());
+      $("#billsEl").text("$" + billsTotal);
     };
 
- if (selected === "Clothing") {
-
-  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
-  		clothingTotal += Number($(".priceInput").val());
-  		console.log(clothingTotal);
-     	$("#clothingEl").text("$" + clothingTotal);
-    };
-
-
- if (selected === "Bills") {
-
-  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
-  		billsTotal += Number($(".priceInput").val());
-  		console.log(clothingTotal);
-     	$("#billsEl").text("$" + billsTotal);
-    };
-
-
-
-
-  $("#item").val("");
-  $("#price").val("");
-});
+    $("#item").val("");
+    $("#price").val("");
+  });
 
 });
 //1. Fade out welcome page on click ================ DONE
