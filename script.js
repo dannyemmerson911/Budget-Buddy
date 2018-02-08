@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function (){
 
 	var userWeeklyBudget;
 
@@ -102,11 +102,11 @@ $(document).ready(function() {
     };
 
 
-    
+
 
   $("#item").val("");
   $("#price").val("");
-  });
+});
 
 });
 //1. Fade out welcome page on click ================ DONE
