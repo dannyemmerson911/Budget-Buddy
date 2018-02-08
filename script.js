@@ -1,25 +1,25 @@
 $(document).ready(function() {
 
-  var userWeeklyBudget;
-  var price;
-  var initialSpent = 0;
-  var entertainmentTotal = 0;
-  var foodTotal = 0;
-  var clothingTotal = 0;
-  var billsTotal = 0;
+	var userWeeklyBudget;
 
-  //on page load, hides popup warning divs and the div containing the main expense tracker
-  $("#wrapperdiv").hide();
-  $("#lessThanHundred").hide();
-  $("#noMoney").hide();
+	var initialSpent = 0;
+  	var entertainmentTotal = 0;
+	var foodTotal = 0;
+	var clothingTotal = 0;
+  	var billsTotal = 0;
+
+//on page load, hides popup warning divs and the div containing the main expense tracker
+	$("#wrapperdiv").hide();
+  	$("#lessThanHundred").hide();
+  	$("#noMoney").hide();
 
 
-  //on submit button click:
-  // - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
-  // - clears the input field
-  // - appends the user's weekly bugdet input value to the expense tracker div
-  // - hides the main div
-  // - shows the expense tracker div
+//on submit button click:
+// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
+// - clears the input field
+// - appends the user's weekly bugdet input value to the expense tracker div
+// - hides the main div
+// - shows the expense tracker div
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
@@ -34,51 +34,81 @@ $(document).ready(function() {
   // - subtracts the price of the item from the userWeeklyBudget total
   // - displays the updated userWeeklyBudget total in the h2 element with the id of "budget"
   $("#formsubmit").click(function(event) {
-      event.preventDefault();
-      var item = $("#item").val();
-      price = Number($("#price").val());
-      var moneySpentEl = $("#moneyspent");
-      var itemIsEmpty = (item === "");
-      var priceIsEmpty = (price === "");
-      if (itemIsEmpty || priceIsEmpty) {
-        alert("Please fill out the form");
-      }
-      var remaining = userWeeklyBudget - price;
-      $("#budget").text("$" + remaining);
-      initialSpent = price += Number(initialSpent);
-      // console.log(initialSpent);
-      moneySpentEl.text("$" + initialSpent);
-    // Below here is what I added
-    //
-    // $("#moneyspent").text("$" + price);
-    // userWeeklyBudget = remaining;
-    // $("#item").val("");
-    // $("#price").val("");
-    // });
-
-
-
-    userWeeklyBudget = remaining;
-    moneySpentEl = initialSpent;
-
-    var selected = $('#categoryChoice :selected').text();
-
-    if (selected === "Food") {
-
-      foodTotal = Number(foodTotal) + price;
-      console.log(foodTotal);
-      $("#foodEl").text("$" + foodTotal);
-    } else if (selected === "Entertainment") {
-      var entertainmentUpdate = Number(entertainmentTotal) + price;
-      $("#entertainmentEl").text("$" + entertainmentUpdate);
+    event.preventDefault();
+        var item = $("#item").val();
+        var price = Number($("#price").val());
+        var moneySpentEl = $("#moneyspent");
+    var itemIsEmpty = (item === "");
+    var priceIsEmpty = (price === "");
+    if (itemIsEmpty || priceIsEmpty) {
+      alert("Please fill out the form");
     }
+    var remaining = userWeeklyBudget - price;
+    $("#budget").text("$" + remaining);
+    initialSpent = price + Number(initialSpent);
+    // console.log(initialSpent);
+    moneySpentEl.text("$" + initialSpent);
+// Below here is what I added
+//
+        // $("#moneyspent").text("$" + price);
+        // userWeeklyBudget = remaining;
+        // $("#item").val("");
+        // $("#price").val("");
+  // });
+
+
+
+	userWeeklyBudget = remaining;
+	moneySpentEl = initialSpent;
+
+  var selected = $('#categoryChoice :selected').text();
+
+
+  if (selected === "Food") {
+  	console.log(selected);
+  	//price = 0;
+  	//console.log(price);
+  		foodTotal += Number($(".priceInput").val());
+  		console.log(foodTotal);
+     	$("#foodEl").text("$" + foodTotal);
+  	//var foodTotal = Number(foodTotal) + price;
+
+     //$("#foodEl").text("$" + foodTotal);
+
+   };
+
+ if (selected === "Entertainment") {
+
+  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
+  		entertainmentTotal += Number($(".priceInput").val());
+  		console.log(entertainmentTotal);
+     	$("#entertainmentEl").text("$" + entertainmentTotal);
+    };
+
+ if (selected === "Clothing") {
+
+  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
+  		clothingTotal += Number($(".priceInput").val());
+  		console.log(clothingTotal);
+     	$("#clothingEl").text("$" + clothingTotal);
+    };
+
+
+ if (selected === "Bills") {
+
+  		//var entertainmentUpdate = Number(entertainmentTotal) + price;
+  		billsTotal += Number($(".priceInput").val());
+  		console.log(clothingTotal);
+     	$("#billsEl").text("$" + billsTotal);
+    };
 
 
 
 
 
-    $("#item").val("");
-    $("#price").val("");
+
+  $("#item").val("");
+  $("#price").val("");
   });
 
 });
