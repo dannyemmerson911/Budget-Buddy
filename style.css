@@ -1,15 +1,31 @@
+/*@font-face {
+  font-family: "Shrikhand";
+  src: url("shrikhand/Shrikhand-Regular.otf");
+}*/
+
+@font-face {
+  font-family: "aleo";
+  src: url("aleo/Aleo-Regular.otf");
+}
+
+@font-face {
+  font-family: ChunkFive;
+  src: url("ChunkFive/ChunkFive.otf");
+}
+
 #wrapperdiv {
- display: flex;
- flex-direction: column;
- background-color: #0C874F;
+  display: flex;
+  flex-direction: column;
+  background-color: #AED9E5;
 }
 #inputDiv {
- border: 2px solid black;
- text-align: center;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- border-radius: 5px;
- font-family: Tahoma;
- background-color: #58BC7F;
+  border: 2px solid black;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  font-family: aleo;
+  background-color: #AED9E5;
+
 }
 input, select {
  display: block;
@@ -20,18 +36,22 @@ input, select {
  width: 225px;
 }
 .categories {
- font-family: Tahoma;
- border: 2px solid black;
- height: 120px;
- width: 250px;
- margin: 10px;
- border-radius: 5px;
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: aleo;
+  border: 2px solid black;
+  height: 120px;
+  width: 180px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  flex-direction: column;
 }
 #categoryDiv {
- display: flex;
- text-align: center;
- justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }
 .seedetails {
  margin-top: -5px;
@@ -61,25 +81,76 @@ span {
    float: right;
 }
 #userBudgetInput {
-   border: 2px solid black;
+    border: 2px solid #0C874F;
+    background-color: #58BC7F;
 }
 #budgetInputDiv {
    text-align: center;
 }
+
 #header {
-   text-align: center;
+
+    text-align: center;
+    color: #0C874F;
+    font-family: ChunkFive;
+    font-size: 2.5em;
+    border-bottom: 2px solid #0C874F;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #budgetSubmitButton {
-   background-color: green;
+    background-color: #0C874F;
+    font-family: aleo;
 }
+
 body {
  background-color: #AED9E5;
 }
-#header {
- color: #0C874F;
- font-weight: bold;
+
+
+p {
+  font-family: aleo;
 }
-.deets {
-   display: flex;
-   flex-direction: row;
+
+#categoryChoice {
+  background-color: #fff;
+}
+
+#row1 {
+  display: flex;
+  flex-direction: row;
+}
+
+#row2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#formsubmit {
+  background-color: #0C874F;
+  color: #AED9E5;
+}
+
+input {
+  background-color: #58BC7F;
+  color: #000;
+}
+
+@media only screen and (min-width: 1160px) {
+  #categoryDiv {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #inputDiv {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #inputDiv {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
 }

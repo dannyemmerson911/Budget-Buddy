@@ -6,57 +6,61 @@
  <title>Midterm</title>
 </head>
 <body>
-   <h1 id="header">Budget Buddy</h1>
-       <div id="budgetInputDiv">
-           <p>Please enter your weekly budget:</p>
-           <input id="userBudgetInput" type="number" placeholder="$">
-           <button id="budgetSubmitButton" type="submit">SUBMIT</button>
-       </div>
- <div id="wrapperdiv">
-   <div id="categoryDiv">
-     <div class="categories">
-       <h3 class="total">Entertainment Total</h3>
-       <h4 id="entertainmentEl">Total here</h4>
-       <h6 id="entertainmentDetail" class="seedetails">See details..</h6>
-     </div>
-    <div class="categories">
-       <h3  class="total">Food Total</h3>
-       <h4 id="foodEl">Total here</h4>
-       <h6 id="foodDetail" class="seedetails">See details..</h6>
-    </div>
-    <div class="categories">
-       <h3  class="total">Clothing Total</h3>
-       <h4 id="clothingEl">Total here</h4>
-       <h6 id ="clothingDetail" class="seedetails">See details..</h6>
-    </div>
 
-    <div class="categories">
-       <h3 class="total">Bills Total</h3>
-       <h4 id="billsEl">Total here</h4>
-       <h6 id="billDetail" class="seedetails">See details..</h6>
-     </div>
+    <h1 id="header">Budget Buddy</h1>
+        <div id="budgetInputDiv">
+            <p>Please enter your weekly budget:</p>
+            <input id="userBudgetInput" type="number" placeholder="$">
+            <button id="budgetSubmitButton" type="submit">SUBMIT</button>
+        </div>
+  <div id="wrapperdiv">
+    <div id="categoryDiv">
+      <div id="row1">
+        <div class="categories">
+          <h3 class="total">Entertainment Total</h3>
+          <h4 id="entertainmentEl">Total here</h4>
+          <h6 id="entertainmentDetail" class="seedetails">See details..</h6>
+        </div>
+        <div class="categories">
+          <h3  class="total">Food Total</h3>
+          <h4 id="foodEl">Total here</h4>
+          <h6 id="foodDetail" class="seedetails">See details..</h6>
+        </div>
+      </div>
+      <div id="row2">
+        <div class="categories">
+          <h3  class="total">Clothing Total</h3>
+          <h4 id="clothingEl">Total here</h4>
+          <h6 id ="clothingDetail" class="seedetails">See details..</h6>
+        </div>
+        <div class="categories">
+          <h3 class="total">Bills Total</h3>
+          <h4 id="billsEl">Total here</h4>
+          <h6 id= "billDetail" class="seedetails">See details..</h6>
+        </div>
+      </div>
+    </div>
+    <div id="inputDiv">
+      <h2>Total of Budget Remaining </h2>
+      <h2 id="budget"></h2>
+      <form>
+        <h3>Select the category:</h3>
+        <select id="categoryChoice">
+          <option selected></option>
+          <option id="entertainment">Entertainment</option>
+          <option id="food">Food</option>
+          <option id="clothing">Clothing</option>
+          <option id="bills">Bills</option>
+        </select>
+        <input id="item" type="text" placeholder="What is the expense?" />
+        <input id="price" class="priceInput" type="number" placeholder="How much is the expense?" />
+          <button id="formsubmit" type="submit">SUBMIT</button>
+      </form>
+      <h2>Money Spent </h2>
+      <h2 id="moneyspent"></h2>
 
-   </div>
-   <div id="inputDiv">
-     <h2>Total of Budget Remaining </h2>
-     <h2 id="budget"></h2>
-     <form>
-       <h3>Select the category:</h3>
-       <select id="categoryChoice">
-         <option selected></option>
-         <option id="entertainment">Entertainment</option>
-         <option id="food">Food</option>
-         <option id="clothing">Clothing</option>
-         <option id="bills">Bills</option>
-       </select>
-       <input id="item" type="text" placeholder="What is the expense?" />
-       <input id="price" class="priceInput" type="number" placeholder="How much is the expense?" />
-         <button id="formsubmit" type="submit">Submit Button</button>
-     </form>
-    <h2>Money Spent </h2>
-    <h2 id="moneyspent"></h2>
-   </div>
- </div>
+    </div>
+  </div>
 
 <div class="deets">
     <div id="hover1">
