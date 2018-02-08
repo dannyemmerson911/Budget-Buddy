@@ -3,10 +3,8 @@ $(document).ready(function() {
 	var userWeeklyBudget;
 	var price;
 	var initialSpent = 0;
-  	var entertainmentTotal = 0;
-  	var foodTotal = 0;
-  	var clothingTotal = 0;
-  	var billsTotal = 0;
+
+
 
   //on page load, hides popup warning divs and the div containing the main expense tracker
   $("#wrapperdiv").hide();
@@ -68,8 +66,6 @@ $(document).ready(function() {
 	var selected = $('categoryChoice :selected').text();
 
 
-
-
    	var entertainmentUpdate = Number(entertainmentTotal) + price;
     console.log(entertainmentTotal);
 
@@ -78,6 +74,7 @@ $(document).ready(function() {
 
   $("#item").val("");
 	$("#price").val("");
+
 
 
 
