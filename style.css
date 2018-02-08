@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
 }
-
 #inputDiv {
   border: 2px solid black;
   text-align: center;
@@ -10,7 +9,6 @@
   border-radius: 5px;
   font-family: Tahoma;
 }
-
 input, select {
   display: block;
   margin-left: auto;
@@ -19,7 +17,6 @@ input, select {
   margin-bottom: 10px;
   width: 225px;
 }
-
 .categories {
   font-family: Tahoma;
   border: 2px solid black;
@@ -29,59 +26,47 @@ input, select {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 #categoryDiv {
   display: flex;
   text-align: center;
   justify-content: center;
 }
-
 .seedetails {
   margin-top: -5px;
 }
-
 #lessThanHundred {
-	width: 60%;
-	height: 60%;
-	border: solid black 3px;
-	padding: 20px;
-	margin: 0 auto;
-	text-align: center; */
-
+    width: 60%;
+    height: 60%;
+    border: solid black 3px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center; */
 }
-
 #noMoney{
-	width: 60%;
-	height: 60%;
-	border: solid black 3px;
-	padding: 20px;
-	margin: 0 auto;
-	text-align: center;
-
+    width: 60%;
+    height: 60%;
+    border: solid black 3px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
 }
-
 .exclamation {
-	width: 30%;
-	height: 30%;
-	text-align: center;
+    width: 30%;
+    height: 30%;
+    text-align: center;
 }
-
 span {
-	float: right;
+    float: right;
 }
-
 #userBudgetInput {
-	border: 2px solid black;
+    border: 2px solid black;
 }
-
 #budgetInputDiv {
-	text-align: center;
+    text-align: center;
 }
-
 #header {
-	text-align: center;
+    text-align: center;
 }
-
 #budgetSubmitButton {
-	background-color: green;
+    background-color: green;
 }
