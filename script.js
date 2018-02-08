@@ -65,11 +65,15 @@ $(document).ready(function() {
 	$("#item").val("");
 	$("#price").val("");
 
-  if ($("#categoryChoice") === "#entertainment") {
+  categoryChoice = $("#categoryChoice").selected;
+
+  if ($(categoryChoice) === "#entertainment") {
     Number(entertainmentTotal) += price;
     console.log(entertainmentTotal);
     $("#entertainmentEl").text(entertainmentTotal);
   }
+
+
 
 
   });
