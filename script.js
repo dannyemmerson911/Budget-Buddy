@@ -3,22 +3,31 @@ $(document).ready(function() {
   var userWeeklyBudget;
 	var spentTotal=0;
 
+//on page load, hides popup warning divs and the div containing the main expense tracker
   $("#wrapperdiv").hide();
-
   $("#lessThanHundred").hide();
-
   $("#noMoney").hide();
 
+//on submit button click:
+// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
+// - clears the input field
+// - appends the user's weekly bugdet input value to the expense tracker div
+// - hides the main div
+// - shows the expense tracker div
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
-    console.log(userWeeklyBudget);
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
     $("#budgetInputDiv").hide();
     $("#wrapperdiv").show();
   });
 
+//on form submit button click:
+// - grabs user input values for item and price of item, and assigns them to variables "item" and "price"
+// - if the price or item input values are empty, alert the user that inputs must be filled in
+// - subtracts the price of the item from the userWeeklyBudget total
+// - displays the updated userWeeklyBudget total in the h2 element with the id of "budget"
   $("#formsubmit").click(function(event) {
     event.preventDefault();
 		var item = $("#item").val();
@@ -34,7 +43,7 @@ $(document).ready(function() {
     $("#budget").text("$" + remaining);
 
 // Below here is what I added 
-
+//
 		$("#moneyspent").text("$" + price);
 
 		userWeeklyBudget = remaining;
