@@ -44,7 +44,6 @@ $(document).ready(function() {
     var remaining = userWeeklyBudget - price;
     $("#budget").text("$" + remaining);
     initialSpent = price + Number(initialSpent);
-    // console.log(initialSpent);
     moneySpentEl.text("$" + initialSpent);
 
     userWeeklyBudget = remaining;
