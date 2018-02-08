@@ -1,15 +1,19 @@
 $(document).ready(function() {
-    var userWeeklyBudget;
-    var price;
-    var initialSpent = 0;
-    var entertainmentTotal = 0;
-    var foodTotal = 0;
-    var clothingTotal = 0;
-    var billsTotal = 0;
+
+	var userWeeklyBudget;
+	var price;
+	var initialSpent = 0;
+  	var entertainmentTotal = 0;
+	var foodTotal = 0;
+	var clothingTotal = 0;
+  	var billsTotal = 0;
+
 //on page load, hides popup warning divs and the div containing the main expense tracker
-    $("#wrapperdiv").hide();
-    $("#lessThanHundred").hide();
-    $("#noMoney").hide();
+	$("#wrapperdiv").hide();
+  	$("#lessThanHundred").hide();
+  	$("#noMoney").hide();
+
+
 //on submit button click:
 // - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
 // - clears the input field
@@ -51,20 +55,35 @@ $(document).ready(function() {
         // $("#item").val("");
         // $("#price").val("");
   // });
-    userWeeklyBudget = remaining;
-    moneySpentEl = initialSpent;
-    var selected = $('categoryChoice :selected').text();
-  categoryChoice = $("#categoryChoice").selected;
 
-    var entertainmentUpdate = Number(entertainmentTotal) + price;
-    console.log(entertainmentTotal);
-    $("#entertainmentEl").text("$" + entertainmentUpdate);
+
+
+	userWeeklyBudget = remaining;
+	moneySpentEl = initialSpent;
+
+  var selected = $('#categoryChoice :selected').text();
+
+  if (selected === "Food") {
+
+       foodTotal = Number(foodTotal) + price;
+     console.log(foodTotal);
+     $("#foodEl").text("$" + foodTotal);
+   };
+
+ if (selected === "Entertainment") {
+  		var entertainmentUpdate = Number(entertainmentTotal) + price;
+     	$("#entertainmentEl").text("$" + entertainmentUpdate);
+    }
+
+
+
+
 
   $("#item").val("");
     $("#price").val("");
   });
 
-}); 
+});
 //1. Fade out welcome page on click ================ DONE
 //2. Find budget input value ================ DONE
 //3. Append budget value to "total budget" ================ DONE
