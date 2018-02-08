@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
-  var userWeeklyBudget;
-	var spentInitial="";
+	var userWeeklyBudget;
+	var price;
+	var initialSpent = 0;
+
 
 //on page load, hides popup warning divs and the div containing the main expense tracker
   $("#wrapperdiv").hide();
@@ -17,6 +19,7 @@ $(document).ready(function() {
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
+
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
     $("#budgetInputDiv").hide();
@@ -31,7 +34,8 @@ $(document).ready(function() {
   $("#formsubmit").click(function(event) {
     event.preventDefault();
 		var item = $("#item").val();
-		var price = $("#price").val();
+		price = Number($("#price").val());
+		var moneySpentEl = $("#moneyspent");
 
     var itemIsEmpty = (item === "");
     var priceIsEmpty = (price === "");
@@ -41,19 +45,19 @@ $(document).ready(function() {
     }
     var remaining = userWeeklyBudget - price;
     $("#budget").text("$" + remaining);
-
-// Below here is what I added
-//
-
-    spentTotal = spentInitial += price;
-    $("#moneyspent").text(spentTotal);
+    initialSpent = price += Number(initialSpent);
+    console.log(initialSpent);
+    moneySpentEl.text("$" + initialSpent);
 
 
 
 
-		userWeeklyBudget = remaining;
-		$("#item").val("");
-		$("#price").val("");
+	userWeeklyBudget = remaining;
+	moneySpentEl = initialSpent;
+
+
+	$("#item").val("");
+	$("#price").val("");
   });
 
 
