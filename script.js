@@ -3,10 +3,10 @@ $(document).ready(function() {
 	var userWeeklyBudget;
 
 	var initialSpent = 0;
-  	var entertainmentTotal = 0;
+  var entertainmentTotal = 0;
 	var foodTotal = 0;
 	var clothingTotal = 0;
-  	var billsTotal = 0;
+  var billsTotal = 0;
 
 //on page load, hides popup warning divs and the div containing the main expense tracker
 	$("#wrapperdiv").hide();
@@ -65,6 +65,7 @@ $(document).ready(function() {
 
 
   if (selected === "Food") {
+
   	console.log(selected);
   	//price = 0;
   	//console.log(price);
@@ -74,8 +75,6 @@ $(document).ready(function() {
   	//var foodTotal = Number(foodTotal) + price;
 
      //$("#foodEl").text("$" + foodTotal);
-
-   };
 
  if (selected === "Entertainment") {
 
@@ -103,9 +102,7 @@ $(document).ready(function() {
     };
 
 
-
-
-
+    
 
   $("#item").val("");
   $("#price").val("");
