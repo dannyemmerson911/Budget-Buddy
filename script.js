@@ -44,12 +44,13 @@ $(document).ready(function() {
 
 // Below here is what I added 
 //
-		$("#moneyspent").text("$" + price);
+		// $("#moneyspent").text("$" + price);
 
-		userWeeklyBudget = remaining;
-		$("#item").val("");
-		$("#price").val("");
-  });
+		// userWeeklyBudget = remaining;
+		// $("#item").val("");
+		// $("#price").val("");
+  // });
+
 
 
 
