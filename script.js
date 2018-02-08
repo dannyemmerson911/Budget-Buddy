@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var userWeeklyBudget;
+	var spentTotal=0;
 
   $("#wrapperdiv").hide();
 
@@ -13,15 +14,15 @@ $(document).ready(function() {
     userWeeklyBudget = $("#userBudgetInput").val();
     console.log(userWeeklyBudget);
     $("#userBudgetInput").val("");
-    $("#budget").append(userWeeklyBudget);
+    $("#budget").append("$" + userWeeklyBudget);
     $("#budgetInputDiv").hide();
     $("#wrapperdiv").show();
   });
 
   $("#formsubmit").click(function(event) {
     event.preventDefault();
-    var item = $("#item").val();
-    var price = $("#price").val();
+		var item = $("#item").val();
+		var price = $("#price").val();
 
     var itemIsEmpty = (item === "");
     var priceIsEmpty = (price === "");
@@ -32,7 +33,13 @@ $(document).ready(function() {
     var remaining = userWeeklyBudget - price;
     $("#budget").text("$" + remaining);
 
+// Below here is what I added 
 
+		$("#moneyspent").text("$" + price);
+
+		userWeeklyBudget = remaining;
+		$("#item").val("");
+		$("#price").val("");
   });
 
 
