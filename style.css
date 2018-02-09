@@ -42,7 +42,7 @@ input, select {
   font-family: aleo;
   border: 2px solid #0C874F;
   height: 120px;
-  width: 180px;
+  width: 150px;
   margin: 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -118,7 +118,7 @@ span {
   text-align: center;
   color: #0C874F;
   font-family: ChunkFive;
-  font-size: 2.2em;
+  font-size: 1.8em;
   border-bottom: 3px solid #0C874F;
   margin-left: 10%;
   margin-right: 10%;
@@ -128,9 +128,13 @@ span {
 #budgetSubmitButton {
   background-color: #0C874F;
   font-family: aleo;
-  width: 20%;
+/*  width: 40%;*/
+  width: 150px;
   height: 20%;
   cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
 }
 
 body {
@@ -166,8 +170,11 @@ p {
 #formsubmit {
   background-color: #0C874F;
   color: #AED9E5;
-  width: 23%;
+  width: 30%;
   height: 15%;
+  padding-top: 20px
+  padding-bottom: 20px;
+  border-radius: 10px;
 }
 
 input {
@@ -206,5 +213,9 @@ input {
   .deets {
     flex-direction: row;
     justify-content: center;
+  }
+
+  #budgetSubmitButton {
+    width: 200px;
   }
 }
