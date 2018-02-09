@@ -24,7 +24,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   font-family: aleo;
-  background-color: #AED9E5;
+  background-color: #8BC9E5
 
 }
 input, select {
@@ -34,7 +34,10 @@ input, select {
  margin-top: 10px;
  margin-bottom: 10px;
  width: 225px;
+ border: none;
+
 }
+
  .categories {
   font-family: aleo;
   border: 2px solid #0C874F;
@@ -44,17 +47,20 @@ input, select {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-direction: column;
+  background-color: #8BC9E5
 }
 
   .deetsdiv {
     font-family: aleo;
     border: 2px solid #0C874F;
-    height: 180px;
+    height: 50%;
     width: 180px;
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    flex-direction: column;
+    flex-direction: column; 
+    padding: 2px;
+
   }
 
 #categoryDiv {
@@ -63,6 +69,7 @@ input, select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 
 }
 .seedetails {
@@ -117,6 +124,9 @@ span {
 #budgetSubmitButton {
     background-color: #0C874F;
     font-family: aleo;
+    width: 20%;
+    height: 20%;
+    cursor: pointer;
 }
 
 body {
@@ -146,16 +156,30 @@ p {
 .deets {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #formsubmit {
   background-color: #0C874F;
   color: #AED9E5;
+  width: 23%;
+  height: 15%;
 }
 
 input {
-  background-color: #58BC7F;
-  color: #000;
+  background-color: #8BC9E5 ;
+  color: #0C874F;
+  border: none;
+  padding: 5px;
+  border-bottom: solid 3px #0C874F
+
+}
+
+.deetsList {
+  list-style: none;
+  text-align: left;
+  margin-right: 15px;
 }
 
 @media only screen and (min-width: 1160px) {

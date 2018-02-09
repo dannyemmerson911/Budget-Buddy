@@ -21,11 +21,12 @@ $(document).ready(function() {
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
+     
 
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
-    $("#budgetInputDiv").hide();
-    $("#wrapperdiv").show();
+    $("#budgetInputDiv").fadeOut(100);
+    $("#wrapperdiv").fadeIn(1000);
   });
   //on form submit button click:
   // - grabs user input values for item and price of item, and assigns them to variables "item" and "price"
@@ -52,20 +53,20 @@ $(document).ready(function() {
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
-      $("#hover1").append('<ul><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover1").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
       $("#entertainmentEl").text("$" + entertainmentTotal);
     } else if (selected === "Food") {
       foodTotal += Number($(".priceInput").val());
       $("#foodEl").text("$" + foodTotal);
-      $("#hover2").append('<ul><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover2").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     } else if (selected === "Clothing") {
       clothingTotal += Number($(".priceInput").val());
       $("#clothingEl").text("$" + clothingTotal);
-      $("#hover3").append('<ul><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover3").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     } else if (selected === "Bills") {
       billsTotal += Number($(".priceInput").val());
       $("#billsEl").text("$" + billsTotal);
-      $("#hover4").append('<ul><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     };
 
 
@@ -74,16 +75,21 @@ $(document).ready(function() {
 
     if (remaining <= 100 && remaining > 0) {
       $("#wrapperdiv").hide();
-      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv);
+      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv,);
+          
     }
+
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
-      $("#noMoney").fadeIn(1, hideDeets).fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, hideDeets);
+      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400,);
     }
   });
 
   function hideDeets() {
     $(".deets").hide();
+  }
+  function showDeets(){
+    $(".deets").show();
   }
 
   function redisplayMainDiv() {
