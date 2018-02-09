@@ -21,7 +21,7 @@ $(document).ready(function() {
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
-     
+
 
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
@@ -75,20 +75,21 @@ $(document).ready(function() {
 
     if (remaining <= 100 && remaining > 0) {
       $("#wrapperdiv").hide();
-      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv,);
-          
+      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv, );
+
     }
 
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
-      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400,);
+      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, );
     }
   });
 
   function hideDeets() {
     $(".deets").hide();
   }
-  function showDeets(){
+
+  function showDeets() {
     $(".deets").show();
   }
 
@@ -107,6 +108,7 @@ $(document).ready(function() {
   $("#billDetail").click(function() {
     $("#hover4").show();
   });
+
 });
 
 //1. Fade out welcome page on click ================ DONE

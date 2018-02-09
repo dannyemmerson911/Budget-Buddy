@@ -18,6 +18,7 @@
   flex-direction: column;
   background-color: #AED9E5;
 }
+
 #inputDiv {
   border: 2px solid #0C874F;
   text-align: center;
@@ -25,20 +26,19 @@
   border-radius: 5px;
   font-family: aleo;
   background-color: #8BC9E5
-
 }
+
 input, select {
- display: block;
- margin-left: auto;
- margin-right: auto;
- margin-top: 10px;
- margin-bottom: 10px;
- width: 225px;
- border: none;
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 225px;
+  border: none;
 }
 
- .categories {
+.categories {
   font-family: aleo;
   border: 2px solid #0C874F;
   height: 120px;
@@ -50,18 +50,17 @@ input, select {
   background-color: #8BC9E5
 }
 
-  .deetsdiv {
-    font-family: aleo;
-    border: 2px solid #0C874F;
-    height: 50%;
-    width: 180px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    flex-direction: column; 
-    padding: 2px;
-
-  }
+.deetsdiv {
+  font-family: aleo;
+  border: 2px solid #0C874F;
+  height: 50%;
+  width: 180px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  flex-direction: column;
+  padding: 2px;
+}
 
 #categoryDiv {
   display: flex;
@@ -69,72 +68,74 @@ input, select {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
-
 }
+
 .seedetails {
- margin-top: -5px;
- cursor: pointer;
+  margin-top: -5px;
+  cursor: pointer;
 }
-
 
 #lessThanHundred {
-   width: 60%;
-   height: 60%;
-   border: solid #0C874F 3px;
-   padding: 20px;
-   margin: 0 auto;
-   text-align: center; 
+  width: 60%;
+  height: 60%;
+  border: solid #0C874F 3px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
-#noMoney{
-   width: 60%;
-   height: 60%;
-   border: solid #0C874F 3px;
-   padding: 20px;
-   margin: 0 auto;
-   text-align: center;
-}
-.exclamation {
-   width: 30%;
-   height: 30%;
-   text-align: center;
-}
-span {
-   float: right;
-}
-#userBudgetInput {
-    border: 2px solid #0C874F;
-    background-color: #58BC7F;
-    margin-top: auto;
 
+#noMoney {
+  width: 60%;
+  height: 60%;
+  border: solid #0C874F 3px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.exclamation {
+  width: 30%;
+  height: 30%;
+  text-align: center;
+}
+
+span {
+  float: right;
+}
+
+#userBudgetInput {
+  border: 2px solid #0C874F;
+  background-color: #58BC7F;
+  margin-top: auto;
 }
 
 #budgetInputDiv {
-   text-align: center;
- }
+  text-align: center;
+  padding: 50px;
+}
 
 #header {
-
-    text-align: center;
-    color: #0C874F;
-    font-family: ChunkFive;
-    font-size: 2.2em;
-    border-bottom: 2px solid #0C874F;
-    margin-left: 10%;
-    margin-right: 10%;
+  text-align: center;
+  color: #0C874F;
+  font-family: ChunkFive;
+  font-size: 2.2em;
+  border-bottom: 3px solid #0C874F;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 15px;
 }
+
 #budgetSubmitButton {
-    background-color: #0C874F;
-    font-family: aleo;
-    width: 20%;
-    height: 20%;
-    cursor: pointer;
+  background-color: #0C874F;
+  font-family: aleo;
+  width: 20%;
+  height: 20%;
+  cursor: pointer;
 }
 
 body {
- background-color: #AED9E5;
+  background-color: #AED9E5;
 }
-
 
 p {
   font-family: aleo;
@@ -170,12 +171,11 @@ p {
 }
 
 input {
-  background-color: #8BC9E5 ;
+  background-color: #8BC9E5;
   color: #0C874F;
   border: none;
   padding: 5px;
-  border-bottom: solid 3px #0C874F
-
+  border-bottom: solid 2px #0C874F
 }
 
 .deetsList {
@@ -189,7 +189,6 @@ input {
     display: flex;
     flex-direction: row;
   }
-
   #inputDiv {
     margin-right: 20%;
     margin-left: 20%;
@@ -201,11 +200,9 @@ input {
     margin-right: 10%;
     margin-left: 10%;
   }
-
   #header {
     font-size: 2.5em;
   }
-
   .deets {
     flex-direction: row;
     justify-content: center;
