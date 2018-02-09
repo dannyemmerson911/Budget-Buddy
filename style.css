@@ -19,7 +19,7 @@
   background-color: #AED9E5;
 }
 #inputDiv {
-  border: 2px solid black;
+  border: 2px solid #0C874F;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
@@ -35,9 +35,9 @@ input, select {
  margin-bottom: 10px;
  width: 225px;
 }
-.categories {
+ .categories {
   font-family: aleo;
-  border: 2px solid black;
+  border: 2px solid #0C874F;
   height: 120px;
   width: 180px;
   margin: 10px;
@@ -45,6 +45,18 @@ input, select {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-direction: column;
 }
+
+  .deetsdiv {
+    font-family: aleo;
+    border: 2px solid #0C874F;
+    height: 180px;
+    width: 180px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex-direction: column;
+  }
+
 #categoryDiv {
   display: flex;
   text-align: center;
@@ -55,11 +67,12 @@ input, select {
 }
 .seedetails {
  margin-top: -5px;
+ cursor: pointer;
 }
 #lessThanHundred {
    width: 60%;
    height: 60%;
-   border: solid black 3px;
+   border: solid #0C874F 3px;
    padding: 20px;
    margin: 0 auto;
    text-align: center; */
@@ -67,7 +80,7 @@ input, select {
 #noMoney{
    width: 60%;
    height: 60%;
-   border: solid black 3px;
+   border: solid #0C874F 3px;
    padding: 20px;
    margin: 0 auto;
    text-align: center;
@@ -83,10 +96,13 @@ span {
 #userBudgetInput {
     border: 2px solid #0C874F;
     background-color: #58BC7F;
+    margin-top: auto;
+
 }
+
 #budgetInputDiv {
    text-align: center;
-}
+ }
 
 #header {
 
@@ -110,6 +126,7 @@ body {
 
 p {
   font-family: aleo;
+  text-align: center;
 }
 
 #categoryChoice {
@@ -124,6 +141,11 @@ p {
 #row2 {
   display: flex;
   flex-direction: row;
+}
+
+.deets {
+  display: flex;
+  flex-direction: column;
 }
 
 #formsubmit {
@@ -152,5 +174,10 @@ input {
   #inputDiv {
     margin-right: 10%;
     margin-left: 10%;
+  }
+
+  .deets {
+    flex-direction: row;
+    justify-content: center;
   }
 }
