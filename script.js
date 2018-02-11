@@ -7,8 +7,6 @@ $(document).ready(function(){
   var clothingTotal = 0;
   var billsTotal = 0;
 
-
-
 //on page load, hides:
 // - 4 divs containing purchase details
   $("#hover1").hide(); 
@@ -61,9 +59,8 @@ $(document).ready(function(){
     moneySpentEl.text("$" + initialSpent);
 // - sets the userWeeklyBudget to "remaining"
     userWeeklyBudget = remaining;
-// - ----------------------------------
     moneySpentEl = initialSpent;
-// - 
+    
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
@@ -86,6 +83,7 @@ $(document).ready(function(){
     $("#item").val("");
     $("#price").val("");
     $("#categoryChoice").val("");
+
 //Flashes warning message when user bugdet "remaining" is less than 100; hides all other content
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
@@ -157,7 +155,6 @@ $(document).ready(function(){
   $("#hover4").click(function() {
     $(this).fadeOut();
   });
-
 
 });
 
