@@ -20,21 +20,20 @@ $(document).ready(function() {
   $("#noMoney").hide();
 
 //on welcome page submit button click:
-// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
-// - clears the input field
+// - assigns the value of the userWeeklyBudget input to the variable "userWeeklyBudget"
+// - clears the budget input field
 // - appends the user's weekly bugdet input value to the expense tracker div
-// - hides the main div
-// - shows the expense tracker div
+// - fades out the welcome screen and budget input div
+// - fades in the main page div, including form and tracker divs
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
-
-
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
     $("#budgetInputDiv").fadeOut(100);
     $("#wrapperdiv").fadeIn(1000);
   });
+
 
   //on form submit button click:
   // - grabs user input values for item and price of item, and assigns them to variables "item" and "price"
