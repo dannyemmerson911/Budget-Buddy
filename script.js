@@ -1,23 +1,30 @@
 $(document).ready(function() {
+
   var userWeeklyBudget;
   var initialSpent = 0;
   var entertainmentTotal = 0;
   var foodTotal = 0;
   var clothingTotal = 0;
   var billsTotal = 0;
-  $("#hover1").hide(); //on page load, hides popup warning divs and the div containing the main expense tracker
+
+//on page load, hides:
+// - 4 divs containing purchase details
+// - the main form div
+// - the two warning popup divs 
+  $("#hover1").hide(); 
   $("#hover2").hide();
   $("#hover3").hide();
   $("#hover4").hide();
   $("#wrapperdiv").hide();
   $("#lessThanHundred").hide();
   $("#noMoney").hide();
-  //on submit button click:
-  // - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
-  // - clears the input field
-  // - appends the user's weekly bugdet input value to the expense tracker div
-  // - hides the main div
-  // - shows the expense tracker div
+
+//on welcome page submit button click:
+// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
+// - clears the input field
+// - appends the user's weekly bugdet input value to the expense tracker div
+// - hides the main div
+// - shows the expense tracker div
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
@@ -70,10 +77,12 @@ $(document).ready(function() {
       $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     };
 
-
+//Resets the form inputs after submit
     $("#item").val("");
     $("#price").val("");
+    $("#categoryChoice").val("");
 
+//
     if (remaining <= 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
