@@ -59,8 +59,9 @@ $(document).ready(function() {
     moneySpentEl.text("$" + initialSpent);
 // - sets the userWeeklyBudget to "remaining"
     userWeeklyBudget = remaining;
-// - sets the 
+// - ----------------------------------
     moneySpentEl = initialSpent;
+// - 
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
@@ -79,30 +80,32 @@ $(document).ready(function() {
       $("#billsEl").text("$" + billsTotal);
       $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     };
-
 //Resets the form inputs after user submit
     $("#item").val("");
     $("#price").val("");
     $("#categoryChoice").val("");
-
-//Flashes warning message when user bugdet "remaining" is less than 100
+//Flashes warning message when user bugdet "remaining" is less than 100; hides all other content
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
       $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
 
     }
-
+//Flashes final warning message the the user's budget has been depleted; hides all other content
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
+// - after fading in and out, calls the redisplayBudgetInputDiv function, which takes user back to the first page
       $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, redisplayBudgetInputDiv);
     }
   });
 
+//Function to show main form div
   function redisplayMainDiv() {
     $("#wrapperdiv").show();
   }
+
+//Function to show the welcome div w/ budget input and hide final warning popup indicating there is no money remaining
   function redisplayBudgetInputDiv() {
     $("#budgetInputDiv").show();
     $("#noMoney").hide();
