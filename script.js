@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 
   var userWeeklyBudget;
   var initialSpent = 0;
@@ -6,6 +6,8 @@ $(document).ready(function() {
   var foodTotal = 0;
   var clothingTotal = 0;
   var billsTotal = 0;
+
+
 
 //on page load, hides:
 // - 4 divs containing purchase details
@@ -65,20 +67,20 @@ $(document).ready(function() {
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
-      $("#hover1").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover1").append('<ul class="deetsList"><li> <em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
       $("#entertainmentEl").text("$" + entertainmentTotal);
     } else if (selected === "Food") {
       foodTotal += Number($(".priceInput").val());
       $("#foodEl").text("$" + foodTotal);
-      $("#hover2").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover2").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Clothing") {
       clothingTotal += Number($(".priceInput").val());
       $("#clothingEl").text("$" + clothingTotal);
-      $("#hover3").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover3").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Bills") {
       billsTotal += Number($(".priceInput").val());
       $("#billsEl").text("$" + billsTotal);
-      $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     };
 //Resets the form inputs after user submit
     $("#item").val("");
@@ -88,28 +90,45 @@ $(document).ready(function() {
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
-      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
+      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv);
 
     }
 //Flashes final warning message the the user's budget has been depleted; hides all other content
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
-// - after fading in and out, calls the redisplayBudgetInputDiv function, which takes user back to the first page
-      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, redisplayBudgetInputDiv);
+      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
+  
+    $("#budgetResetButton").click(function(event) {
+      event.preventDefault(); 
+      $("#budgetInputDiv").show();
+      $("#noMoney").hide();
+      $("#item").text("");
+      $("#price").text("");
+      $("#categoryChoice").val("");
+      $("#entertainmentEl").text("");
+      $("#foodEl").text("");
+      $("#clothingEl").text(""); 
+      $("#billsEl").text(""); 
+      $("#moneyspent").text(""); 
+      $("#budget").text("");
+      $("#item").trigger("reset");
+      $("#price").trigger("reset");
+      $(".deetsList").text("");
+      initialSpent = 0; 
+      userWeeklyBudget; 
+      entertainmentTotal = 0;
+      foodTotal = 0;
+      clothingTotal = 0;
+      billsTotal = 0;
+    });
+
+    function redisplayMainDiv(){
+      $("#wrapperdiv").fadeIn(1000);
+    }
+
   });
-
-//Function to show main form div
-  function redisplayMainDiv() {
-    $("#wrapperdiv").show();
-  }
-
-//Function to show the welcome div w/ budget input and hide final warning popup indicating there is no money remaining
-  function redisplayBudgetInputDiv() {
-    $("#budgetInputDiv").show();
-    $("#noMoney").hide();
-  }
 
 //On click for "see details" each of the 4 spending categories, shows the purchase details entered by the user
   $("#entertainmentDetail").click(function() {
@@ -139,4 +158,11 @@ $(document).ready(function() {
     $(this).fadeOut();
   });
 
+
 });
+
+
+
+
+
+
