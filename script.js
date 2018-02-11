@@ -80,13 +80,13 @@ $(document).ready(function() {
       $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
     };
 
-//Resets the form inputs after submit
+//Resets the form inputs after user submit
     $("#item").val("");
     $("#price").val("");
     $("#categoryChoice").val("");
 
-//
-    if (remaining <= 100 && remaining > 0) {
+//Flashes warning message when user bugdet "remaining" is less than 100
+    if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
       $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
@@ -121,6 +121,7 @@ $(document).ready(function() {
   $("#billDetail").click(function() {
     $("#hover4").show();
   });
+
 //On click for each of the details boxes, the box clicked will fade out
   $("#hover1").click(function() {
     $("#hover1").fadeOut();
