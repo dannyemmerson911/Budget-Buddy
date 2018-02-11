@@ -108,7 +108,7 @@ $(document).ready(function() {
     $("#noMoney").hide();
   }
 
-//On click for each of the 4 spending categories, shows the purchase details entered by the user for each category
+//On click for "see details" each of the 4 spending categories, shows the purchase details entered by the user
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();
   });
@@ -122,18 +122,18 @@ $(document).ready(function() {
     $("#hover4").show();
   });
 
-//On click for each of the details boxes, the box clicked will fade out
+//On click for each of the details boxes, "this" details box clicked will fade out
   $("#hover1").click(function() {
-    $("#hover1").fadeOut();
+    $(this).fadeOut();
   });
   $("#hover2").click(function() {
-    $("#hover2").fadeOut();
+    $(this).fadeOut();
   });
   $("#hover3").click(function() {
-    $("#hover3").fadeOut();
+    $(this).fadeOut();
   });
   $("#hover4").click(function() {
-    $("#hover4").fadeOut();
+    $(this).fadeOut();
   });
 
 });
