@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 
   var userWeeklyBudget;
   var initialSpent = 0;
@@ -6,6 +6,8 @@ $(document).ready(function() {
   var foodTotal = 0;
   var clothingTotal = 0;
   var billsTotal = 0;
+
+
 
 //on page load, hides:
 // - 4 divs containing purchase details
@@ -28,8 +30,6 @@ $(document).ready(function() {
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
-
-
     $("#userBudgetInput").val("");
     $("#budget").append("$" + userWeeklyBudget);
     $("#budgetInputDiv").fadeOut(100);
@@ -61,20 +61,20 @@ $(document).ready(function() {
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
-      $("#hover1").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover1").append('<ul class="deetsList"><li> <em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
       $("#entertainmentEl").text("$" + entertainmentTotal);
     } else if (selected === "Food") {
       foodTotal += Number($(".priceInput").val());
       $("#foodEl").text("$" + foodTotal);
-      $("#hover2").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover2").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Clothing") {
       clothingTotal += Number($(".priceInput").val());
       $("#clothingEl").text("$" + clothingTotal);
-      $("#hover3").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover3").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Bills") {
       billsTotal += Number($(".priceInput").val());
       $("#billsEl").text("$" + billsTotal);
-      $("#hover4").append('<ul class="deetsList"><li> Item: ' + item + '</li><li> Price: $' + price + '</li></ul>');
+      $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     };
 
 //Resets the form inputs after submit
@@ -86,29 +86,18 @@ $(document).ready(function() {
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
-      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
+      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv);
 
     }
 
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
-      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, redisplayBudgetInputDiv);
+      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
-  });
-
-  function hideDeets() {
-    $(".deets").hide();
-  }
-
-  function showDeets() {
-    $(".deets").show();
-  }
-
-  function redisplayMainDiv() {
-    $("#wrapperdiv").show();
-  }
-  function redisplayBudgetInputDiv() {
+  
+    $("#budgetResetButton").click(function(event) {
+    event.preventDefault(); 
     $("#budgetInputDiv").show();
     $("#noMoney").hide();
     $("#item").text("");
@@ -121,14 +110,21 @@ $(document).ready(function() {
     $("#moneyspent").text(""); 
     $("#budget").text("");
     $("#item").trigger("reset");
-    $("#price").trigger("reset"); 
+    $("#price").trigger("reset");
+    $(".deetsList").text("");
     initialSpent = 0; 
     userWeeklyBudget; 
     entertainmentTotal = 0;
     foodTotal = 0;
     clothingTotal = 0;
     billsTotal = 0;
-}
+});
+
+    function redisplayMainDiv(){
+      $("#wrapperdiv").fadeIn(1000);
+    }
+
+});
 
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();
@@ -155,4 +151,11 @@ $(document).ready(function() {
     $("#hover4").fadeOut();
   });
 
+
 });
+
+
+
+
+
+

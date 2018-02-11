@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
   <h1 id="header">$ Budget Buddy $</h1>
   <div id="budgetInputDiv">
     <p>Please enter your weekly budget:</p>
@@ -16,37 +15,11 @@
     <button id="budgetSubmitButton" type="submit">SUBMIT</button>
   </div>
   <div id="wrapperdiv">
-    <div id="categoryDiv">
-      <div id="row1">
-        <div class="categories">
-          <h3 class="total">Entertainment Total</h3>
-          <h4 id="entertainmentEl"></h4>
-          <h6 id="entertainmentDetail" class="seedetails">See details..</h6>
-        </div>
-        <div class="categories">
-          <h3 class="total">Food Total</h3>
-          <h4 id="foodEl"></h4>
-          <h6 id="foodDetail" class="seedetails">See details..</h6>
-        </div>
-      </div>
-      <div id="row2">
-        <div class="categories">
-          <h3 class="total">Clothing Total</h3>
-          <h4 id="clothingEl"></h4>
-          <h6 id="clothingDetail" class="seedetails">See details..</h6>
-        </div>
-        <div class="categories">
-          <h3 class="total">Bills Total</h3>
-          <h4 id="billsEl"></h4>
-          <h6 id="billDetail" class="seedetails">See details..</h6>
-        </div>
-      </div>
-    </div>
     <div id="inputDiv">
       <h2>Total of Budget Remaining </h2>
       <h2 id="budget"></h2>
       <form>
-        <h3>Select the category:</h3>
+        <h3>Select expense category here:</h3>
         <select id="categoryChoice">
           <option selected></option>
           <option id="entertainment">Entertainment</option>
@@ -60,7 +33,32 @@
       </form>
       <h2>Money Spent </h2>
       <h2 id="moneyspent"></h2>
-
+    </div>
+    <div id="categoryDiv">
+      <div id="row1">
+        <div class="categories">
+          <h3 class="total">Entertainment</h3>
+          <h4 id="entertainmentEl"></h4>
+          <h6 id="entertainmentDetail" class="seedetails">Click for details below</h6>
+        </div>
+        <div class="categories">
+          <h3 class="total">Food</h3>
+          <h4 id="foodEl"></h4>
+          <h6 id="foodDetail" class="seedetails">Click for details below</h6>
+        </div>
+      </div>
+      <div id="row2">
+        <div class="categories">
+          <h3 class="total">Clothing</h3>
+          <h4 id="clothingEl"></h4>
+          <h6 id="clothingDetail" class="seedetails">Click for details below</h6>
+        </div>
+        <div class="categories">
+          <h3 class="total">Bills</h3>
+          <h4 id="billsEl"></h4>
+          <h6 id="billDetail" class="seedetails">Click for details below</h6>
+        </div>
+      </div>
     </div>
   </div>
   <div id="lessThanHundred">
@@ -72,7 +70,9 @@
   <div id="noMoney">
     <p>
       Your weekly budget has been exhausted.
+      Would you like to budget another week?
     </p>
+    <button id ="budgetResetButton" type="submit">Budget Another Week</button>
     <img class="exclamation" src="images/attention.png" />
   </div>
   <div class="deets">
