@@ -9,53 +9,57 @@ $(document).ready(function() {
 
 //on page load, hides:
 // - 4 divs containing purchase details
-// - the main form div
-// - the two warning popup divs 
   $("#hover1").hide(); 
   $("#hover2").hide();
   $("#hover3").hide();
   $("#hover4").hide();
+// - main form div
   $("#wrapperdiv").hide();
+// - two warning popup divs 
   $("#lessThanHundred").hide();
   $("#noMoney").hide();
 
 //on welcome page submit button click:
-// - assigns the value of the userWeeklyBudget input to the variable "userWeeklyBudget"
-// - clears the budget input field
-// - appends the user's weekly bugdet input value to the expense tracker div
-// - fades out the welcome screen and budget input div
-// - fades in the main page div, including form and tracker divs
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
+// - assigns the value of the userWeeklyBudget input to the variable "userWeeklyBudget"
     userWeeklyBudget = $("#userBudgetInput").val();
+// - clears the budget input field
     $("#userBudgetInput").val("");
+// - appends the user's weekly bugdet input value to the expense tracker div
     $("#budget").append("$" + userWeeklyBudget);
+// - fades out the welcome screen/budget input div
     $("#budgetInputDiv").fadeOut(100);
+// - fades in the main page div, including form and tracker divs
     $("#wrapperdiv").fadeIn(1000);
   });
 
-
-  //on form submit button click:
-  // - grabs user input values for item and price of item, and assigns them to variables "item" and "price"
-  // - if the price or item input values are empty, alert the user that inputs must be filled in
-  // - subtracts the price of the item from the userWeeklyBudget total
-  // - displays the updated userWeeklyBudget total in the h2 element with the id of "budget"
+//on form submit button click:
   $("#formsubmit").click(function(event) {
     event.preventDefault();
+// - grabs the user input values for item and price of item, and assigns them to variables "item" and "price"
     var item = $("#item").val();
     var price = Number($("#price").val());
+// - sets variable for "moneyspentEl" tracker to the location of the "moneyspent" div
     var moneySpentEl = $("#moneyspent");
+// - sets variables for item and price inputs being empty 
     var itemIsEmpty = (item === "");
     var priceIsEmpty = (price === "");
+// - alerts the user that they must fill out the form if input fields are empty
     if (itemIsEmpty || priceIsEmpty) {
       alert("Please fill out the form");
     }
+// - subtracts the price of the item from the userWeeklyBudget total; assigns that value to variable "remaining"
     var remaining = userWeeklyBudget - price;
+// - appends the value of "remaining" to the budget div
     $("#budget").text("$" + remaining);
+// - sets initialSpent to itself plus the price of the item purchased
     initialSpent = price + Number(initialSpent);
-    // console.log(initialSpent);
+// - appends the "initialSpent" to the moneySpentEl div so it displays for the user
     moneySpentEl.text("$" + initialSpent);
+// - sets the userWeeklyBudget to "remaining"
     userWeeklyBudget = remaining;
+// - sets the 
     moneySpentEl = initialSpent;
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
@@ -96,23 +100,15 @@ $(document).ready(function() {
     }
   });
 
-  function hideDeets() {
-    $(".deets").hide();
-  }
-
-  function showDeets() {
-    $(".deets").show();
-  }
-
   function redisplayMainDiv() {
     $("#wrapperdiv").show();
   }
   function redisplayBudgetInputDiv() {
     $("#budgetInputDiv").show();
     $("#noMoney").hide();
-
   }
 
+//On click for each of the 4 spending categories, shows the purchase details entered by the user for each category
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();
   });
@@ -125,6 +121,7 @@ $(document).ready(function() {
   $("#billDetail").click(function() {
     $("#hover4").show();
   });
+//On click for each of the details boxes, the box clicked will fade out
   $("#hover1").click(function() {
     $("#hover1").fadeOut();
   });
