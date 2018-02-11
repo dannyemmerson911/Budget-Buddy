@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   var userWeeklyBudget;
   var initialSpent = 0;
@@ -6,6 +6,7 @@ $(document).ready(function(){
   var foodTotal = 0;
   var clothingTotal = 0;
   var billsTotal = 0;
+
 
 //on page load, hides:
 // - 4 divs containing purchase details
@@ -79,6 +80,7 @@ $(document).ready(function(){
       $("#billsEl").text("$" + billsTotal);
       $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     };
+
 //Resets the form inputs after user submit
     $("#item").val("");
     $("#price").val("");
@@ -97,9 +99,9 @@ $(document).ready(function(){
       $(".deetsdiv").hide();
       $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
-  
+
     $("#budgetResetButton").click(function(event) {
-      event.preventDefault(); 
+      event.preventDefault();
       $("#budgetInputDiv").show();
       $("#noMoney").hide();
       $("#item").text("");
@@ -107,22 +109,29 @@ $(document).ready(function(){
       $("#categoryChoice").val("");
       $("#entertainmentEl").text("");
       $("#foodEl").text("");
-      $("#clothingEl").text(""); 
-      $("#billsEl").text(""); 
-      $("#moneyspent").text(""); 
+      $("#clothingEl").text("");
+      $("#billsEl").text("");
+      $("#moneyspent").text("");
       $("#budget").text("");
       $("#item").trigger("reset");
       $("#price").trigger("reset");
       $(".deetsList").text("");
-      initialSpent = 0; 
-      userWeeklyBudget; 
+      initialSpent = 0;
+      userWeeklyBudget;
       entertainmentTotal = 0;
       foodTotal = 0;
       clothingTotal = 0;
       billsTotal = 0;
     });
 
-    function redisplayMainDiv(){
+    $("#seeDetailsButton").click(function() {
+      $("#hover1").show();
+      $("#hover2").show();
+      $("#hover3").show();
+      $("#hover4").show();
+    });
+
+    function redisplayMainDiv() {
       $("#wrapperdiv").fadeIn(1000);
     }
 
@@ -157,9 +166,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-
-
-
-
