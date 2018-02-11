@@ -101,9 +101,6 @@ input, select {
   text-align: center;
 }
 
-span {
-  float: right;
-}
 
 #userBudgetInput {
   border: 2px solid #0C874F;

@@ -83,7 +83,7 @@ $(document).ready(function() {
     $("#categoryChoice").val("");
 
 //
-    if (remaining <= 100 && remaining > 0) {
+    if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
       $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
@@ -111,8 +111,24 @@ $(document).ready(function() {
   function redisplayBudgetInputDiv() {
     $("#budgetInputDiv").show();
     $("#noMoney").hide();
-
-  }
+    $("#item").text("");
+    $("#price").text("");
+    $("#categoryChoice").val("");
+    $("#entertainmentEl").text("");
+    $("#foodEl").text("");
+    $("#clothingEl").text(""); 
+    $("#billsEl").text(""); 
+    $("#moneyspent").text(""); 
+    $("#budget").text("");
+    $("#item").trigger("reset");
+    $("#price").trigger("reset"); 
+    initialSpent = 0; 
+    userWeeklyBudget; 
+    entertainmentTotal = 0;
+    foodTotal = 0;
+    clothingTotal = 0;
+    billsTotal = 0;
+}
 
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();
