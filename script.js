@@ -10,8 +10,8 @@ $(document).ready(function() {
 //on page load, hides:
 // - 4 divs containing purchase details
 // - the main form div
-// - the two warning popup divs 
-  $("#hover1").hide(); 
+// - the two warning popup divs
+  $("#hover1").hide();
   $("#hover2").hide();
   $("#hover3").hide();
   $("#hover4").hide();
