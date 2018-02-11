@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   var userWeeklyBudget;
   var initialSpent = 0;
@@ -9,10 +9,10 @@ $(document).ready(function(){
 
 
 
-//on page load, hides:
-// - 4 divs containing purchase details
-// - the main form div
-// - the two warning popup divs
+  //on page load, hides:
+  // - 4 divs containing purchase details
+  // - the main form div
+  // - the two warning popup divs
   $("#hover1").hide();
   $("#hover2").hide();
   $("#hover3").hide();
@@ -21,12 +21,12 @@ $(document).ready(function(){
   $("#lessThanHundred").hide();
   $("#noMoney").hide();
 
-//on welcome page submit button click:
-// - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
-// - clears the input field
-// - appends the user's weekly bugdet input value to the expense tracker div
-// - hides the main div
-// - shows the expense tracker div
+  //on welcome page submit button click:
+  // - assigns userWeeklyBudget input to the variable "userWeeklyBudget"
+  // - clears the input field
+  // - appends the user's weekly bugdet input value to the expense tracker div
+  // - hides the main div
+  // - shows the expense tracker div
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
     userWeeklyBudget = $("#userBudgetInput").val();
@@ -77,12 +77,12 @@ $(document).ready(function(){
       $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     };
 
-//Resets the form inputs after submit
+    //Resets the form inputs after submit
     $("#item").val("");
     $("#price").val("");
     $("#categoryChoice").val("");
 
-//
+    //
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
@@ -97,34 +97,40 @@ $(document).ready(function(){
     }
 
     $("#budgetResetButton").click(function(event) {
-    event.preventDefault();
-    $("#budgetInputDiv").show();
-    $("#noMoney").hide();
-    $("#item").text("");
-    $("#price").text("");
-    $("#categoryChoice").val("");
-    $("#entertainmentEl").text("");
-    $("#foodEl").text("");
-    $("#clothingEl").text("");
-    $("#billsEl").text("");
-    $("#moneyspent").text("");
-    $("#budget").text("");
-    $("#item").trigger("reset");
-    $("#price").trigger("reset");
-    $(".deetsList").text("");
-    initialSpent = 0;
-    userWeeklyBudget;
-    entertainmentTotal = 0;
-    foodTotal = 0;
-    clothingTotal = 0;
-    billsTotal = 0;
-});
+      event.preventDefault();
+      $("#budgetInputDiv").show();
+      $("#noMoney").hide();
+      $("#item").text("");
+      $("#price").text("");
+      $("#categoryChoice").val("");
+      $("#entertainmentEl").text("");
+      $("#foodEl").text("");
+      $("#clothingEl").text("");
+      $("#billsEl").text("");
+      $("#moneyspent").text("");
+      $("#budget").text("");
+      $("#item").trigger("reset");
+      $("#price").trigger("reset");
+      $(".deetsList").text("");
+      initialSpent = 0;
+      userWeeklyBudget;
+      entertainmentTotal = 0;
+      foodTotal = 0;
+      clothingTotal = 0;
+      billsTotal = 0;
+    });
 
-    function redisplayMainDiv(){
+    $("#seeDetailsButton").click(function() {
+      $("#hover1").show();
+      $("#hover2").show();
+      $("#hover3").show();
+      $("#hover4").show();
+    });
+
+    function redisplayMainDiv() {
       $("#wrapperdiv").fadeIn(1000);
     }
-
-});
+  });
 
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();

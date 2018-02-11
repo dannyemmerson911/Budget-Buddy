@@ -104,6 +104,7 @@ input, select {
   height: 30%;
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 
@@ -201,10 +202,20 @@ input {
   width: 30%;
   height: 15%;
   padding-top: 20px
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   border-radius: 5px;
   cursor: pointer;
+  }
 
+  #seeDetailsButton {
+    background-color: #0C874F;
+    color: #AED9E5;
+    width: 30%;
+    height: 15%;
+    padding-top: 20px
+    /* padding-bottom: 20px; */
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1160px) {
@@ -234,4 +245,5 @@ input {
   #budgetSubmitButton {
     width: 200px;
   }
+
 }
