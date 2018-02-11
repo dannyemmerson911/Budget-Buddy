@@ -76,13 +76,15 @@ $(document).ready(function() {
 
     if (remaining <= 100 && remaining > 0) {
       $("#wrapperdiv").hide();
-      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv, );
+      $(".deetsdiv").hide();
+      $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv );
 
     }
 
     if (remaining <= 0) {
       $("#wrapperdiv").hide();
-      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, );
+      $(".deetsdiv").hide();
+      $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400, redisplayBudgetInputDiv);
     }
   });
 
@@ -97,6 +99,12 @@ $(document).ready(function() {
   function redisplayMainDiv() {
     $("#wrapperdiv").show();
   }
+  function redisplayBudgetInputDiv() {
+    $("#budgetInputDiv").show();
+    $("#noMoney").hide();
+
+  }
+
   $("#entertainmentDetail").click(function() {
     $("#hover1").show();
   });
@@ -109,6 +117,17 @@ $(document).ready(function() {
   $("#billDetail").click(function() {
     $("#hover4").show();
   });
+  $("#hover1").click(function() {
+    $("#hover1").fadeOut();
+  });
+  $("#hover2").click(function() {
+    $("#hover2").fadeOut();
+  });
+  $("#hover3").click(function() {
+    $("#hover3").fadeOut();
+  });
+  $("#hover4").click(function() {
+    $("#hover4").fadeOut();
+  });
 
 });
-

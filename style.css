@@ -25,7 +25,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   font-family: aleo;
-  background-color: #8BC9E5
+  background-color: #8BC9E5;
 }
 
 input, select {
@@ -41,7 +41,7 @@ input, select {
 .categories {
   font-family: aleo;
   border: 2px solid #0C874F;
-  height: 120px;
+  height: 150px;
   width: 150px;
   margin: 10px;
   border-radius: 5px;
@@ -60,6 +60,8 @@ input, select {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-direction: column;
   padding: 2px;
+  cursor: pointer;
+  background-color: #8BC9E5;
 }
 
 #categoryDiv {
@@ -130,7 +132,8 @@ input, select {
   cursor: pointer;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 body {
@@ -170,7 +173,7 @@ p {
   height: 15%;
   padding-top: 20px
   padding-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 input {
