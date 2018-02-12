@@ -24,11 +24,11 @@ $(document).ready(function() {
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
 // - assigns the value of the userWeeklyBudget input to the variable "userWeeklyBudget"
-    userWeeklyBudget = $("#userBudgetInput").val();
+    userWeeklyBudget = Number($("#userBudgetInput").val());
 // - clears the budget input field
     $("#userBudgetInput").val("");
 // - appends the user's weekly bugdet input value to the expense tracker div
-    $("#budget").append("$" + userWeeklyBudget);
+    $("#budget").append("$" + userWeeklyBudget.toFixed(2));
 // - fades out the welcome screen/budget input div
     $("#budgetInputDiv").fadeOut(100);
 // - fades in the main page div, including form and tracker divs
@@ -58,6 +58,7 @@ $(document).ready(function() {
 // - grabs the user input values for item and price of item, and assigns them to variables "item" and "price"
     var item = $("#item").val();
     var price = Number($("#price").val());
+   
 // - sets variable for "moneyspentEl" tracker to the location of the "moneyspent" div
     var moneySpentEl = $("#moneyspent");
 // - sets variables for item and price inputs being empty 
@@ -70,30 +71,31 @@ $(document).ready(function() {
 // - subtracts the price of the item from the userWeeklyBudget total; assigns that value to variable "remaining"
     var remaining = userWeeklyBudget - price;
 // - appends the value of "remaining" to the budget div
-    $("#budget").text("$" + remaining);
+    $("#budget").text("$" + remaining.toFixed(2));
 // - sets initialSpent to itself plus the price of the item purchased
     initialSpent = price + Number(initialSpent);
 // - appends the "initialSpent" to the moneySpentEl div so it displays for the user
-    moneySpentEl.text("$" + initialSpent);
+    moneySpentEl.text("$" + initialSpent.toFixed(2));
     userWeeklyBudget = remaining;
     moneySpentEl = initialSpent;
+
     
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
       $("#hover1").append('<ul class="deetsList"><li> <em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
-      $("#entertainmentEl").text("$" + entertainmentTotal);
+      $("#entertainmentEl").text("$" + entertainmentTotal.toFixed(2));
     } else if (selected === "Food") {
       foodTotal += Number($(".priceInput").val());
-      $("#foodEl").text("$" + foodTotal);
+      $("#foodEl").text("$" + foodTotal.toFixed(2));
       $("#hover2").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Clothing") {
       clothingTotal += Number($(".priceInput").val());
-      $("#clothingEl").text("$" + clothingTotal);
+      $("#clothingEl").text("$" + clothingTotal.toFixed(2));
       $("#hover3").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     } else if (selected === "Bills") {
       billsTotal += Number($(".priceInput").val());
-      $("#billsEl").text("$" + billsTotal);
+      $("#billsEl").text("$" + billsTotal.toFixed(2));
       $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
     };
 
