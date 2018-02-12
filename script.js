@@ -83,20 +83,20 @@ $(document).ready(function() {
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
-      $("#hover1").append('<ul class="deetsList"><li> <em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
+      $("#hover1").append('<ul class="deetsList"><li> <em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + Number(price).toFixed(2) + '</li></ul>');
       $("#entertainmentEl").text("$" + entertainmentTotal.toFixed(2));
     } else if (selected === "Food") {
       foodTotal += Number($(".priceInput").val());
       $("#foodEl").text("$" + foodTotal.toFixed(2));
-      $("#hover2").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
+      $("#hover2").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + Number(price).toFixed(2) + '</li></ul>');
     } else if (selected === "Clothing") {
       clothingTotal += Number($(".priceInput").val());
       $("#clothingEl").text("$" + clothingTotal.toFixed(2));
-      $("#hover3").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
+      $("#hover3").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + Number(price).toFixed(2) + '</li></ul>');
     } else if (selected === "Bills") {
       billsTotal += Number($(".priceInput").val());
       $("#billsEl").text("$" + billsTotal.toFixed(2));
-      $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + price + '</li></ul>');
+      $("#hover4").append('<ul class="deetsList"><li><em>Item:</em> ' + item + '</li><li><em>Price:</em> $' + Number(price).toFixed(2) + '</li></ul>');
     };
 
 //Resets the form inputs after user submit
