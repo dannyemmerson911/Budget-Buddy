@@ -1,8 +1,3 @@
-/*@font-face {
-  font-family: "Shrikhand";
-  src: url("shrikhand/Shrikhand-Regular.otf");
-}*/
-
 @font-face {
   font-family: "aleo";
   src: url("aleo/Aleo-Regular.otf");
@@ -34,7 +29,7 @@ input, select {
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 225px;
+  width: 150px;
   border: none;
 }
 
@@ -218,17 +213,6 @@ input {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 1160px) {
-  #categoryDiv {
-    display: flex;
-    flex-direction: row;
-  }
-  #inputDiv {
-    margin-right: 20%;
-    margin-left: 20%;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   #inputDiv {
     margin-right: 10%;
@@ -246,4 +230,19 @@ input {
     width: 200px;
   }
 
+  #categoryDiv {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 1160px) {
+  #categoryDiv {
+    display: flex;
+    flex-direction: row;
+  }
+  #inputDiv {
+    margin-right: 20%;
+    margin-left: 20%;
+  }
 }
