@@ -35,6 +35,23 @@ $(document).ready(function() {
     $("#wrapperdiv").fadeIn(1000);
   });
 
+  $("#entertainmentDetail").click(function(event) {
+      event.preventDefault();
+      $("#hover1").show();
+    });
+  $("#foodDetail").click(function(event) {
+      event.preventDefault();
+      $("#hover2").show();
+    });
+  $("#clothingDetail").click(function(event) {
+      event.preventDefault();
+      $("#hover3").show();
+    });
+  $("#billDetail").click(function(event) {
+      event.preventDefault();
+      $("#hover4").show();
+    });
+
 //on form submit button click:
   $("#formsubmit").click(function(event) {
     event.preventDefault();
@@ -81,16 +98,15 @@ $(document).ready(function() {
     };
 
 //Resets the form inputs after user submit
-    $("#item").val("");
-    $("#price").val("");
-    $("#categoryChoice").val("");
+      $("#item").val("");
+      $("#price").val("");
+      $("#categoryChoice").val("");
 
 //Flashes warning message when user bugdet "remaining" is less than 100; hides all other content
     if (remaining < 100 && remaining > 0) {
       $("#wrapperdiv").hide();
       $(".deetsdiv").hide();
       $("#lessThanHundred").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut(400, redisplayMainDiv);
-
     }
 //Flashes final warning message the the user's budget has been depleted; hides all other content
     if (remaining <= 0) {
@@ -98,6 +114,10 @@ $(document).ready(function() {
       $(".deetsdiv").hide();
       $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
+
+    
+
+
 
     $("#budgetResetButton").click(function(event) {
       event.preventDefault();
@@ -115,7 +135,10 @@ $(document).ready(function() {
       $("#item").trigger("reset");
       $("#price").trigger("reset");
       $(".deetsList").text("");
-      $(".deets").hide();
+      $("#hover1").hide();
+      $("#hover2").hide();
+      $("#hover3").hide();
+      $("#hover4").hide();
       initialSpent = 0;
       userWeeklyBudget;
       entertainmentTotal = 0;
@@ -124,44 +147,32 @@ $(document).ready(function() {
       billsTotal = 0;
     });
 
-    $("#seeDetailsButton").click(function() {
-      $("#hover1").show();
-      $("#hover2").show();
-      $("#hover3").show();
-      $("#hover4").show();
+    $("#seeDetailsButton").click(function(event) {
+      event.preventDefault();
+      $(".deetsdiv").show();
     });
+});
 
-    function redisplayMainDiv() {
-      $("#wrapperdiv").fadeIn(1000);
-    }
 
-  });
-
-//On click for "see details" each of the 4 spending categories, shows the purchase details entered by the user
-  $("#entertainmentDetail").click(function() {
-    $("#hover1").show();
-  });
-  $("#foodDetail").click(function() {
-    $("#hover2").show();
-  });
-  $("#clothingDetail").click(function() {
-    $("#hover3").show();
-  });
-  $("#billDetail").click(function() {
-    $("#hover4").show();
-  });
-
-//On click for each of the details boxes, "this" details box clicked will fade out
-  $("#hover1").click(function() {
+function redisplayMainDiv() {
+  $("#wrapperdiv").fadeIn(1000);
+  };
+      //On click for "see details" each of the 4 spending categories, shows the purchase details entered by the user
+      //On click for each of the details boxes, "this" details box clicked will fade out
+  $("#hover1").click(function(event) {
+    event.preventDefault();
     $(this).fadeOut();
   });
-  $("#hover2").click(function() {
+  $("#hover2").click(function(event) {
+    event.preventDefault();
     $(this).fadeOut();
   });
-  $("#hover3").click(function() {
+  $("#hover3").click(function(event) {
+    event.preventDefault();
     $(this).fadeOut();
   });
-  $("#hover4").click(function() {
+  $("#hover4").click(function(event) {
+    event.preventDefault();
     $(this).fadeOut();
   });
 
