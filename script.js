@@ -112,6 +112,7 @@ $(document).ready(function() {
       $("#item").trigger("reset");
       $("#price").trigger("reset");
       $(".deetsList").text("");
+      $(".deets").hide();
       initialSpent = 0;
       userWeeklyBudget;
       entertainmentTotal = 0;

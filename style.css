@@ -26,6 +26,10 @@
   border-radius: 5px;
   font-family: aleo;
   background-color: #8BC9E5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 input, select {
@@ -218,6 +222,18 @@ input {
     cursor: pointer;
 }
 
+#budgetBuddy1 {
+  height: 30%;
+  width: 30%;
+  margin-top: 75px;
+
+}
+
+#budgetBuddy2 {
+  height: 30%;
+  width: 30%;
+}
+
 @media only screen and (min-width: 1160px) {
   #categoryDiv {
     display: flex;
@@ -227,7 +243,22 @@ input {
     margin-right: 20%;
     margin-left: 20%;
   }
+
+  .deetsdiv {
+    margin-right: 40px;
+    margin-left: 40px; 
+    margin-top: 10px; 
+  }
+
+  #budgetBuddy2 {
+    margin-top: 10px; 
+    height: 15%;
+    width: 15%;
+    margin-left: 25px;
+  }
+
 }
+
 
 @media only screen and (min-width: 768px) {
   #inputDiv {
@@ -244,6 +275,19 @@ input {
 
   #budgetSubmitButton {
     width: 200px;
+  }
+
+  #budgetBuddy2 {
+    margin-top: 10px; 
+    height: 15%;
+    width: 15%;
+    margin-left: 25px;
+  }
+
+  .deetsdiv {
+    margin-right: 40px;
+    margin-left: 40px; 
+    margin-top: 10px; 
   }
 
 }
