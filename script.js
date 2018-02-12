@@ -6,8 +6,6 @@ $(document).ready(function() {
   var foodTotal = 0;
   var clothingTotal = 0;
   var billsTotal = 0;
-
-
 //on page load, hides:
 // - 4 divs containing purchase details
   $("#hover1").hide(); 
@@ -19,7 +17,6 @@ $(document).ready(function() {
 // - two warning popup divs 
   $("#lessThanHundred").hide();
   $("#noMoney").hide();
-
 //on welcome page submit button click:
   $("#budgetSubmitButton").click(function(event) {
     event.preventDefault();
@@ -116,10 +113,6 @@ $(document).ready(function() {
       $(".deetsdiv").hide();
       $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
-
-    
-
-
 
     $("#budgetResetButton").click(function(event) {
       event.preventDefault();
