@@ -30,7 +30,12 @@ input, select {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 150px;
-  border: none;
+}
+
+select {
+  border: 2px solid #0C874F;
+  font-size: 16px;
+  width: 60%;
 }
 
 .categories {
@@ -107,6 +112,20 @@ input, select {
   border: 2px solid #0C874F;
   background-color: #58BC7F;
   margin-top: auto;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+#item, #price {
+  border: 2px solid #0C874F;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: auto;
+  font-size: 16px;
+  color: #000;
+  width: 60%;
+  font-family: aleo;
 }
 
 #budgetInputDiv {
@@ -125,7 +144,7 @@ input, select {
   padding-bottom: 15px;
 }
 
-#budgetSubmitButton {
+#formsubmit, #budgetSubmitButton {
   background-color: #0C874F;
   font-family: aleo;
   width: 150px;
@@ -135,6 +154,8 @@ input, select {
   padding-bottom: 10px;
   border-radius: 5px;
   margin-top: 10px;
+  color: #fff;
+  font-size: 16px;
 }
 
 body {
@@ -165,24 +186,6 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-#formsubmit {
-  background-color: #0C874F;
-  color: #AED9E5;
-  width: 30%;
-  height: 15%;
-  padding-top: 20px
-  padding-bottom: 20px;
-  border-radius: 5px;
-}
-
-input {
-  background-color: #8BC9E5;
-  color: #0C874F;
-  border: none;
-  padding: 5px;
-  border-bottom: solid 2px #0C874F
 }
 
 .deetsList {
