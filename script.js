@@ -32,6 +32,7 @@ $(document).ready(function() {
     $("#wrapperdiv").fadeIn(1000);
   });
 
+//On click "see details" for each of the 4 spending categories, shows user purchase details
   $("#entertainmentDetail").click(function(event) {
       event.preventDefault();
       $("#hover1").show();
@@ -76,7 +77,7 @@ $(document).ready(function() {
     userWeeklyBudget = remaining;
     moneySpentEl = initialSpent;
 
-    
+//Takes data entered by user for each category
     var selected = $('#categoryChoice :selected').text();
     if (selected === "Entertainment") {
       entertainmentTotal += Number($(".priceInput").val());
@@ -114,6 +115,7 @@ $(document).ready(function() {
       $("#noMoney").fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn(400);
     }
 
+//On "budgetResetButton" click, resets program
     $("#budgetResetButton").click(function(event) {
       event.preventDefault();
       $("#budgetInputDiv").show();
@@ -152,8 +154,8 @@ $(document).ready(function() {
 function redisplayMainDiv() {
   $("#wrapperdiv").fadeIn(1000);
   };
-      //On click for "see details" each of the 4 spending categories, shows the purchase details entered by the user
-      //On click for each of the details boxes, "this" details box clicked will fade out
+
+//On click for each of the details boxes, "this" details box clicked will fade out
   $("#hover1").click(function(event) {
     event.preventDefault();
     $(this).fadeOut();
